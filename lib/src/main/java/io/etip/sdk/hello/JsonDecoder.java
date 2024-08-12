@@ -8,9 +8,7 @@ public interface JsonDecoder {
     <T> T decode(String json, Class<T> clazz);
 }
 
-/**
- * Implementations examples of Jackson ObjectMapper and Gson
- */
+// Implementations examples of Jackson ObjectMapper and Gson
 /*
 class ObjectMapperDecoder implements JsonDecoder {
     private final ObjectMapper objectMapper;
@@ -35,6 +33,19 @@ class GsonDecoder implements JsonDecoder {
     @Override
     public <T> T decode(String json, Class<T> clazz) {
         return gson.fromJson(json, clazz);
+    }
+}
+
+class JsonbDecoder implements JsonDecoder {
+    private final Jsonb jsonb;
+
+    public JsonbDecoder(Jsonb jsonb) {
+        this.jsonb = jsonb;
+    }
+
+    @Override
+    public <T> T decode(String json, Class<T> clazz) {
+        return jsonb.fromJson(json, clazz);
     }
 }
 */

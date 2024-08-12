@@ -36,4 +36,17 @@ class GsonEncoder implements JsonEncoder {
         return gson.toJson(obj);
     }
 }
+
+class JsonbEncoder implements JsonEncoder {
+    private final Jsonb jsonb;
+
+    public JsonbEncoder(Jsonb jsonb) {
+        this.jsonb = jsonb;
+    }
+
+    @Override
+    public String encode(Object obj) {
+        return jsonb.toJson(obj);
+    }
+}
 */

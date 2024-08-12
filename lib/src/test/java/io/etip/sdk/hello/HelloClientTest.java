@@ -4,20 +4,25 @@ package io.etip.sdk.hello;
 import io.etip.sdk.hello.greetings.GetGreetingRequest;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
+import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class HelloClientTest {
-    // @Test
+
+
+    @Test
     void createClientWithDefaultHttpClientAndCodecs() {
         HelloClient client = HelloClient.newBuilder()
                 .secretKey("my-secret-key")
                 .baseUri("http://localhost:8080")
                 .build();
         assertNotNull(client);
+        assertEquals("http://localhost:8080", client.baseUri());
     }
 
-    // @Test
+    @Test
     void createClientWithCustomHttpClientAndCodecs() {
         var httpClient = new OkHttpClient.Builder()
                 .authenticator((route, response) -> {
@@ -35,6 +40,7 @@ class HelloClientTest {
                 .baseUri("http://localhost:8080")
                 .build();
         assertNotNull(client);
+        assertEquals("http://localhost:8080", client.baseUri());
     }
 
     // An example of calling GreetingApis

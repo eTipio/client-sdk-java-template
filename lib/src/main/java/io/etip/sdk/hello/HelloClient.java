@@ -12,15 +12,15 @@ public class HelloClient {
     private JsonCodec codecs;
     private String baseUri;
 
-    public OkHttpClient getHttpClient() {
+    public OkHttpClient httpClient() {
         return httpClient;
     }
 
-    public JsonCodec getCodecs() {
+    public JsonCodec codecs() {
         return codecs;
     }
 
-    public String getBaseUri() {
+    public String baseUri() {
         return baseUri;
     }
 

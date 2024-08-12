@@ -23,6 +23,12 @@ dependencies {
     api(platform("com.fasterxml.jackson:jackson-bom:${libs.versions.jackson}"))
     implementation(libs.bundles.jackson)
 
+    // Gson
+    implementation(libs.gson)
+
+    // Jakarta EE JSON-B implementation
+    implementation(libs.yasson)
+
     // Use JUnit Jupiter for testing.
     testImplementation(libs.junit.jupiter)
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")

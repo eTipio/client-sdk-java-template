@@ -19,22 +19,23 @@ public class GreetingsApiImpl implements GreetingsApi {
     }
 
     @Override
-    public GetGreetingResponse getGreeting(GetGreetingRequest getGreetingRequest)  {
-        var requestUrl = this.client.getBaseUri() + "/greetings?name=" + getGreetingRequest.name();
+    public GetGreetingResponse getGreeting(GetGreetingRequest getGreetingRequest) {
+        var requestUrl = this.client.baseUri() + "/greetings?name=" + getGreetingRequest.name();
         Response response = null;
         try {
-            response = this.client.getHttpClient()
+            response = this.client.httpClient()
                     .newCall(new Request.Builder().get().url(requestUrl).build())
                     .execute();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        if(response.code()!=200) {
-            throw new GreetingFailedException("Not found");
+
+        if (response.code() != 200) {
+            throw new GreetingFailedException("Failed to get greeting: ");
         }
 
         try {
-            return this.client.getCodecs().decoder().decode(response.body().string(), GetGreetingResponse.class);
+            return this.client.codecs().decoder().decode(response.body().string(), GetGreetingResponse.class);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

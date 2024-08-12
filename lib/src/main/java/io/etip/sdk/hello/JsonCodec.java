@@ -8,12 +8,10 @@ public class JsonCodec {
         return encoder;
     }
 
-
     public JsonDecoder decoder() {
         return decoder;
     }
-
-
+    
     public static Builder newBuilder() {
         return new Builder();
     }
@@ -26,10 +24,12 @@ public class JsonCodec {
             this.encoder = encoder;
             return this;
         }
+
         public Builder decoder(JsonDecoder decoder) {
             this.decoder = decoder;
             return this;
         }
+
         public JsonCodec build() {
             var codec = new JsonCodec();
             codec.encoder = this.encoder;
