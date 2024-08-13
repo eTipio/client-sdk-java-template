@@ -6,7 +6,7 @@ import java.util.function.Function;
 
 @FunctionalInterface
 public interface JsonEncoder {
-    public String encode(Object obj) throws JsonProcessingException;
+    public String encode(Object obj);
 }
 
 // implementation examples of Jackson ObjectMapper and Gson
