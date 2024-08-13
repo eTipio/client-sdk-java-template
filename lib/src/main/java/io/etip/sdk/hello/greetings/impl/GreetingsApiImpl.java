@@ -27,7 +27,7 @@ public class GreetingsApiImpl implements GreetingsApi {
                     .newCall(new Request.Builder().get().url(requestUrl).build())
                     .execute();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new GreetingFailedException(e.getMessage());
         }
 
         if (response.code() != 200) {
@@ -37,7 +37,7 @@ public class GreetingsApiImpl implements GreetingsApi {
         try {
             return this.client.codecs().decoder().decode(response.body().string(), GetGreetingResponse.class);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new GreetingFailedException(e.getMessage());
         }
     }
 }
