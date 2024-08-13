@@ -381,7 +381,7 @@ HelloClient client = HelloClient.newBuilder()
     .baseUri("http://localhost:8080")
     .build();
 ```
-Here we add a logging interceptor to the HttpClient, and use Gson to process JSON data.
+Here we add a logging interceptor to the HttpClient, and use Gson instead of the one provided in the Client SDK to process JSON data.
 
 Then call the APIs like this.
 
@@ -396,8 +396,8 @@ As a Client SDK developer, follow these steps to start a new Java Client SDK pro
 * Go to https://github.com/eTipio/client-sdk-template, click **Use this template** button in the top right area, and create your fork repository.
 * Choose your HttpClient and JSON libs, and clean the dependencies.
 * Read the target API docs carefully.
-* Rename the project build name to `<service>-sdk-java`, eg. `tabapay-sdk-java`
-* Rename the top package and entry `Client` class name.
+* Rename the project build name to `<service>-sdk-java`, eg. `tabapay-sdk-java`.
+* Rename the top package and the entry `Client` class name. eg. `io.eip.sdk.tabapay` and `TabapayClient`.
 * Repeat `write`, `test`,  `refactor` steps to contribute your codes.
-* Some API services provide a sandbox environment or mock server to verify your codes and try to write integration tests for testing your codes against the environment close to the real world.
+* Some API services provide a sandbox environment or mock server to verify your codes. Try to write integration tests for testing your codes against the environment close to the real world.
 * For those APIs that do not have a testing environment, try to create a local mock server via OkHttp test server or WireMock.
