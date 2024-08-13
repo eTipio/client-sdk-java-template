@@ -111,7 +111,7 @@ The API service base URL is `http://localhost:8080/api`.
 We will use this simple API as an example to describe the naming and project structure when writing a Java Client SDK for it.
 
 
-### Define Project Structure
+### Project Structure
 
 Define a new package as the base package for the further new codes, and in the root of the package add a new class named `HelloClient`. 
 
@@ -397,7 +397,7 @@ As a Client SDK developer, follow these steps to start a new Java Client SDK pro
 * Choose your HttpClient and JSON libs, and clean the dependencies.
 * Read the target API docs carefully.
 * Rename the project build name to `<service>-sdk-java`, eg. `tabapay-sdk-java`.
-* Rename the top package and the entry `Client` class name. eg. `io.eip.sdk.tabapay` and `TabapayClient`.
+* Rename the top package and the entry `Client` class name. eg. `io.eip.sdk.tabapay` and `TabapayClient`. And clean the client codes with your HttpClient and JSON choice.
 * Repeat `write`, `test`,  `refactor` steps to contribute your codes.
 * Some API services provide a sandbox environment or mock server to verify your codes. Try to write integration tests for testing your codes against the environment close to the real world.
 * For those APIs that do not have a testing environment, try to create a local mock server via OkHttp test server or WireMock.
