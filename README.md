@@ -4,7 +4,7 @@ In the previous development, we faced the problem that a lot of third-party APIs
 
 This template project provides a universal guide for creating Java Client SDK for these 3rd-party HTTP-based APIs.
 
-## Client Overview
+## Overview
 
 To create a client for HTTP based APIs, it requires a Http Client connector and a HttpMessage codec engine. We can use a client class as the entry of the Client SDK.
 
@@ -145,7 +145,7 @@ public class JsonCodec {
 }
 ```
 
-To accept the external configuration parameters, in `HelloClient` we can introduce a `Builder` pattern.
+To accept the external configuration parameters, in `HelloClient` we can introduce a *Builder* pattern.
 
 ```java
 public class HelloClient {
@@ -237,7 +237,7 @@ Using a Builder pattern, we keep the `HelloClient` clean and move all complex wo
 2. Accept all configuration parameters via the Builder class, keep the `HelloClient` as clean as possible, and make sure there are no tedious properties in `HelloClient`. In the above example, the `secretKey` is only used to initialize a HttpClient instance and never used in further API interaction. However, we will need to use `baseUri` to assemble the target URL in the API interaction.
 3. Once the `HelloClient` is built completely, make sure the properties are read only. 
 
-Alternatively, using Factory Method pattern is also good for creating a `HelloClient`` instance.
+Alternatively, using *Factory Method* pattern is also good for creating a `HelloClient` instance.
 
 The following examples are some dummy codes.
 
