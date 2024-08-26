@@ -401,3 +401,20 @@ As a Client SDK developer, follow these steps to start a new Java Client SDK pro
 * Repeat `write`, `test`,  `refactor` steps to contribute your codes.
 * Some API services provide a sandbox environment or mock server to verify your codes. Try to write integration tests for testing your codes against the environment close to the real world.
 * For those APIs that do not have a testing environment, try to create a local mock server via OkHttp test server or WireMock.
+
+License
+--------
+
+    Copyright 2024 eTip, Inc.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       https://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
